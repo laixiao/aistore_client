@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>AI应用平台</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 顶部导航 -->
+        <header class="top-nav">
+            <a href="https://openaistore.cn/" class="official-link" target="_blank">
+                <img src="https://openaistore.cn/images/logo.png" alt="官网" class="official-logo">
+            </a>
+            <div class="tab-container">
+                <a class="tab-item" data-page="reviewer">AI点评</a>
+                <a class="tab-item" data-page="cloud">云体验</a>
+                <a class="tab-item active" data-page="ai">AI应用</a>
+                <a class="tab-item" data-page="workflow">工作流</a>
+            </div>
+        </header>
+
+        <!-- 主内容区 -->
+        <main class="content-container">
+            <!-- 云体验页面 -->
+            <div id="cloudPage" class="page">
+                <div class="search-section">
+                    <div class="search-bar">
+                        <input type="text" placeholder="搜索云端服务">
+                    </div>
+                    <div class="hot-searches" id="cloudHotSearches"></div>
+                </div>
+                <div class="feed-grid" id="cloudFeedGrid"></div>
+            </div>
+
+            <!-- AI应用页面 -->
+            <div id="aiPage" class="page active">
+                <div class="search-section">
+                    <div class="search-bar">
+                        <input type="text" placeholder="搜索AI应用">
+                    </div>
+                    <div class="hot-searches" id="aiHotSearches"></div>
+                </div>
+                <div class="feed-grid" id="feedGrid"></div>
+            </div>
+
+            <!-- 工作流页面 -->
+            <div id="workflowPage" class="page">
+                <div class="search-section">
+                    <div class="search-bar">
+                        <input type="text" placeholder="搜索工作流">
+                    </div>
+                    <div class="hot-searches" id="workflowHotSearches"></div>
+                </div>
+                <div class="feed-grid" id="workflowFeedGrid"></div>
+            </div>
+
+            <!-- AI点评页面 -->
+            <div id="reviewerPage" class="page">
+                <div class="search-section">
+                    <div class="search-bar">
+                        <input type="text" placeholder="搜索点评">
+                    </div>
+                    <div class="hot-searches" id="reviewerHotSearches"></div>
+                </div>
+                <div class="feed-grid" id="reviewerFeedGrid"></div>
+            </div>
+
+            <!-- 个人页面 -->
+            <div id="profilePage" class="page">
+                <div class="profile-page">
+                    <div class="profile-header">
+                        <img src="https://picsum.photos/200/200" alt="Avatar" class="profile-avatar">
+                        <h2 class="profile-name">用户名</h2>
+                        <p class="profile-bio">这是个人简介</p>
+                    </div>
+                    <div class="profile-tabs">
+                        <a class="profile-tab active" data-tab="reviews">我点评的</a>
+                        <a class="profile-tab" data-tab="favorites">我收藏的</a>
+                    </div>
+                    <div class="feed-grid" id="profileFeedGrid"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部导航 -->
+        <nav class="bottom-nav">
+            <div class="bottom-nav-content">
+                <a class="nav-item active" data-page="ai">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <button class="publish-btn">
+                    <span>+</span>
+                </button>
+                <a class="nav-item" data-page="profile">
+                    <span class="nav-icon">👤</span>
+                    <span>我</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- 模态框遮罩 -->
+        <div class="modal-overlay"></div>
+
+        <!-- 发布点评模态框 -->
+        <div class="publish-modal">
+            <div class="modal-header">
+                <button class="back-btn">←</button>
+                <h2>发布点评</h2>
+            </div>
+            <div class="modal-content">
+                <div class="image-upload-area">
+                    <div class="upload-plus">
+                        <div class="upload-placeholder">
+                            <span class="upload-icon">📷</span>
+                            <span class="upload-text">选择图片</span>
+                        </div>
+                    </div>
+                </div>
+                <input type="text" class="title-input" placeholder="添加标题">
+                <textarea class="content-input" placeholder="添加正文"></textarea>
+                <div class="tag-container">
+                    <span class="tag">#AI点评</span>
+                    <span class="tag">#产品测评</span>
+                    <span class="tag">#技术解析</span>
+                    <span class="tag">#用户体验</span>
+                </div>
+                <div class="action-items">
+                    <div class="action-item">
+                        <span class="icon">🔗</span>
+                        <span>关联项目：AI视频处理</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="icon">👥</span>
+                        <span>下级可见</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="footer-btn">存草稿</button>
+                <button class="publish-action">发布点评</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
